@@ -1,0 +1,150 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Pause.gd" type="Script" id=3]
+[ext_resource path="res://Art/SpriteSheet.png" type="Texture" id=4]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 8, 16, 8, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 0, 8, 16, 8, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 8, 16, 8, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 8, 0, 8 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 8, 0, 8 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 0, 0, 16, 0, 16, 8, 0, 8 )
+
+[sub_resource type="TileSet" id=10]
+0/name = "SpriteSheet.png 0"
+0/texture = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 48, 48 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 0
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 256, Vector2( 0, 1 ), 292, Vector2( 0, 2 ), 4, Vector2( 1, 0 ), 448, Vector2( 1, 1 ), 511, Vector2( 1, 2 ), 7, Vector2( 2, 0 ), 64, Vector2( 2, 1 ), 73, Vector2( 2, 2 ), 1 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 16, 16 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[node name="World" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 22.5309, 14.7703 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 10 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -131075, 0, 0, -131074, 0, 1, -131073, 0, 1, -196608, 0, 1, -196607, 0, 1, -196606, 0, 1, -196605, 0, 1, -196604, 0, 1, -196603, 0, 1, -196602, 0, 1, -196601, 0, 1, -196600, 0, 1, -196599, 0, 1, -196598, 0, 1, -196597, 0, 1, -196596, 0, 1, -196595, 0, 1, -196594, 0, 1, -196593, 0, 1, -196592, 0, 1, -196591, 0, 1, -196590, 0, 1, -196589, 0, 2, -65539, 0, 65536, -65538, 0, 65537, -65537, 0, 65537, -131072, 0, 65537, -131071, 0, 65537, -131070, 0, 65537, -131069, 0, 65537, -131068, 0, 65537, -131067, 0, 65537, -131066, 0, 65537, -131065, 0, 65537, -131064, 0, 65537, -131063, 0, 65537, -131062, 0, 65537, -131061, 0, 65537, -131060, 0, 65537, -131059, 0, 65537, -131058, 0, 65537, -131057, 0, 65537, -131056, 0, 65537, -131055, 0, 65537, -131054, 0, 0, -131053, 0, 65538, -3, 0, 65536, -2, 0, 65537, -1, 0, 65537, -65536, 0, 65538, -65535, 0, 131073, -65534, 0, 131073, -65533, 0, 131073, -65532, 0, 131073, -65531, 0, 131073, -65530, 0, 131073, -65529, 0, 131073, -65528, 0, 131073, -65527, 0, 131073, -65526, 0, 131073, -65525, 0, 131073, -65524, 0, 131073, -65523, 0, 131073, -65522, 0, 131073, -65521, 0, 131073, -65520, 0, 131073, -65519, 0, 131073, -65518, 0, 65536, -65517, 0, 65538, 65533, 0, 65536, 65534, 0, 65537, 65535, 0, 65537, 0, 0, 65538, 18, 0, 65536, 19, 0, 65538, 131069, 0, 65536, 131070, 0, 65537, 131071, 0, 65537, 65536, 0, 65538, 65537, 0, 1, 65538, 0, 1, 65539, 0, 1, 65540, 0, 2, 65547, 0, 0, 65548, 0, 1, 65549, 0, 1, 65550, 0, 1, 65551, 0, 1, 65552, 0, 1, 65553, 0, 1, 65554, 0, 65536, 65555, 0, 65538, 196605, 0, 65536, 196606, 0, 65537, 196607, 0, 65537, 131072, 0, 65537, 131073, 0, 65537, 131074, 0, 65537, 131075, 0, 65537, 131076, 0, 65538, 131083, 0, 65536, 131084, 0, 65537, 131085, 0, 65537, 131086, 0, 65537, 131087, 0, 65537, 131088, 0, 65537, 131089, 0, 65537, 131090, 0, 65536, 131091, 0, 65538, 262141, 0, 65536, 262142, 0, 65537, 262143, 0, 65537, 196608, 0, 65537, 196609, 0, 65537, 196610, 0, 65537, 196611, 0, 65537, 196612, 0, 65538, 196619, 0, 131072, 196620, 0, 131073, 196621, 0, 131073, 196622, 0, 131073, 196623, 0, 131073, 196624, 0, 131073, 196625, 0, 131073, 196626, 0, 65536, 196627, 0, 65538, 327677, 0, 65536, 327678, 0, 65537, 327679, 0, 65537, 262146, 0, 65537, 262147, 0, 65537, 262148, 0, 65538, 262162, 0, 65536, 262163, 0, 65538, 393213, 0, 65536, 393214, 0, 65537, 393215, 0, 65537, 327680, 0, 65537, 327681, 0, 65537, 327682, 0, 65537, 327683, 0, 65537, 327684, 0, 65538, 327698, 0, 65536, 327699, 0, 65538, 458749, 0, 65536, 458750, 0, 65537, 458751, 0, 65537, 393216, 0, 65537, 393218, 0, 65537, 393219, 0, 65537, 393220, 0, 65538, 393221, 0, 1, 393222, 0, 1, 393223, 0, 1, 393224, 0, 2, 393225, 0, 2, 393234, 0, 65536, 393235, 0, 65538, 524285, 0, 65536, 524286, 0, 65537, 524287, 0, 65537, 458752, 0, 65537, 458753, 0, 65537, 458754, 0, 65537, 458755, 0, 65537, 458756, 0, 65537, 458757, 0, 65537, 458758, 0, 65537, 458759, 0, 65537, 458760, 0, 65537, 458761, 0, 65538, 458770, 0, 65536, 458771, 0, 65538, 589821, 0, 65536, 589822, 0, 65537, 589823, 0, 65537, 524288, 0, 65537, 524289, 0, 65537, 524290, 0, 65537, 524291, 0, 65537, 524292, 0, 65537, 524293, 0, 65537, 524294, 0, 65537, 524295, 0, 65537, 524296, 0, 65537, 524297, 0, 65538, 524306, 0, 65536, 524307, 0, 65538, 655357, 0, 65536, 655358, 0, 65537, 655359, 0, 65537, 589824, 0, 65537, 589825, 0, 65537, 589826, 0, 65537, 589827, 0, 65537, 589828, 0, 65537, 589829, 0, 65537, 589830, 0, 65537, 589831, 0, 65537, 589832, 0, 65537, 589833, 0, 65538, 589842, 0, 65536, 589843, 0, 65538, 720893, 0, 65536, 720894, 0, 65537, 720895, 0, 65537, 655360, 0, 65537, 655361, 0, 65537, 655362, 0, 65537, 655363, 0, 65537, 655364, 0, 65537, 655365, 0, 65537, 655366, 0, 65537, 655367, 0, 65537, 655368, 0, 65537, 655369, 0, 65538, 655378, 0, 65536, 655379, 0, 65538, 786429, 0, 65536, 786430, 0, 65537, 786431, 0, 65537, 720896, 0, 65537, 720897, 0, 65537, 720898, 0, 65537, 720899, 0, 65537, 720900, 0, 65537, 720901, 0, 65537, 720902, 0, 65537, 720903, 0, 65537, 720904, 0, 65537, 720905, 0, 65538, 720914, 0, 65536, 720915, 0, 65538, 851965, 0, 131072, 851966, 0, 131073, 851967, 0, 131073, 786432, 0, 131073, 786433, 0, 131073, 786434, 0, 131073, 786435, 0, 131073, 786436, 0, 131073, 786437, 0, 131073, 786438, 0, 131073, 786439, 0, 131073, 786440, 0, 131073, 786441, 0, 131074, 786450, 0, 131072, 786451, 0, 131074 )
+
+[node name="PauseLayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="Pause" type="Control" parent="PauseLayer"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="PauseLayer/Pause"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.215686 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PauseLayer/Pause/ColorRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -31.0
+margin_top = -7.0
+margin_right = 31.0
+margin_bottom = 7.0
+text = "PAUSED!"
