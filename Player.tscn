@@ -1,22 +1,40 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Art/Minerador.png" type="Texture" id=1]
+[ext_resource path="res://Art/minerador1.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
-[ext_resource path="res://Art/Hero.png" type="Texture" id=3]
+[ext_resource path="res://Art/minerador3.png" type="Texture" id=3]
+[ext_resource path="res://Art/minerador4.png" type="Texture" id=4]
+[ext_resource path="res://Art/minerador2.png" type="Texture" id=5]
+[ext_resource path="res://Art/minerador5.png" type="Texture" id=6]
+[ext_resource path="res://Art/hero3.png" type="Texture" id=7]
+[ext_resource path="res://Art/hero5.png" type="Texture" id=8]
+[ext_resource path="res://Art/hero2.png" type="Texture" id=9]
+[ext_resource path="res://Art/hero1.png" type="Texture" id=10]
+[ext_resource path="res://Art/hero4.png" type="Texture" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
-"name": "default",
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Run",
 "speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 10 ) ],
 "loop": true,
-"name": "default",
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 11 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Run",
 "speed": 5.0
 } ]
 
@@ -28,10 +46,13 @@ script = ExtResource( 2 )
 
 [node name="MinerSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
+animation = "Run"
+frame = 3
 
 [node name="HeroSprite" type="AnimatedSprite" parent="."]
 visible = false
 frames = SubResource( 2 )
+animation = "Run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.817, 0 )
