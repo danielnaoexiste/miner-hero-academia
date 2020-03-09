@@ -1,0 +1,42 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://TileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://Gem.tscn" type="PackedScene" id=2]
+[ext_resource path="res://DestructibleBlock.tscn" type="PackedScene" id=3]
+[ext_resource path="res://DeathPlane.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Bunny.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Cursors.tscn" type="PackedScene" id=7]
+[ext_resource path="res://PauseLayer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://World.gd" type="Script" id=9]
+
+[node name="World6" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 1, 0, 65536, 2, 0, 65538, 5, 0, 65536, 6, 0, 65538, 65537, 0, 65536, 65538, 0, 65538, 65539, 0, 0, 65540, 0, 2, 65541, 0, 131072, 65542, 0, 131074, 131073, 0, 131072, 131074, 0, 131073, 131075, 0, 131073, 131076, 0, 131074, 262162, 0, 0, 262163, 0, 2, 327698, 0, 131072, 327699, 0, 131074, 393221, 0, 0, 393222, 0, 2, 458757, 0, 131072, 458758, 0, 131074, 655372, 0, 0, 655373, 0, 1, 655374, 0, 1, 655375, 0, 1, 655376, 0, 1, 655377, 0, 1, 655378, 0, 1, 655379, 0, 1, 720908, 0, 65536, 720911, 0, 65537, 720912, 0, 65537, 720913, 0, 65537, 720914, 0, 65537, 720915, 0, 65537, 720916, 0, 65537 )
+
+[node name="Player" parent="." instance=ExtResource( 6 )]
+position = Vector2( 54.4164, 13.135 )
+
+[node name="Bunny" parent="." instance=ExtResource( 5 )]
+position = Vector2( 304.86, 66.0766 )
+next_scene = "res://World7.tscn"
+
+[node name="Cursors" parent="." instance=ExtResource( 7 )]
+
+[node name="Block" parent="." instance=ExtResource( 3 )]
+position = Vector2( 67.5515, 5.6293 )
+player_path = NodePath("../Player")
+
+[node name="DeathPlane" parent="." instance=ExtResource( 4 )]
+position = Vector2( 126.659, 201.716 )
+scale = Vector2( 27.52, 1 )
+
+[node name="Gem" parent="." instance=ExtResource( 2 )]
+position = Vector2( 74.119, 15.9496 )
+
+[node name="PauseLayer" parent="." instance=ExtResource( 8 )]

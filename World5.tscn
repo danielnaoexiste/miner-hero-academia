@@ -1,0 +1,42 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://TileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://Gem.tscn" type="PackedScene" id=2]
+[ext_resource path="res://DestructibleBlock.tscn" type="PackedScene" id=3]
+[ext_resource path="res://DeathPlane.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Bunny.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Cursors.tscn" type="PackedScene" id=7]
+[ext_resource path="res://PauseLayer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://World.gd" type="Script" id=9]
+
+[node name="World5" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="PauseLayer" parent="." instance=ExtResource( 8 )]
+
+[node name="Cursors" parent="." instance=ExtResource( 7 )]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 65539, 0, 0, 65540, 0, 2, 65552, 0, 0, 65553, 0, 2, 65554, 0, 1, 65555, 0, 2, 131075, 0, 65536, 131076, 0, 65538, 131088, 0, 131072, 131089, 0, 131073, 131090, 0, 131073, 131091, 0, 131074, 196611, 0, 65536, 196612, 0, 65538, 262144, 0, 1, 262145, 0, 1, 262146, 0, 2, 262147, 0, 131072, 262148, 0, 131074, 327680, 0, 131073, 327681, 0, 131073, 327682, 0, 131074, 524303, 0, 0, 524304, 0, 1, 524305, 0, 1, 524306, 0, 2, 589839, 0, 131072, 589840, 0, 131073, 589841, 0, 131073, 589842, 0, 131074 )
+
+[node name="Player" parent="." instance=ExtResource( 6 )]
+position = Vector2( 8.91614, 60.7658 )
+
+[node name="Bunny" parent="." instance=ExtResource( 5 )]
+position = Vector2( 291.144, 18.1904 )
+next_scene = "res://World6.tscn"
+
+[node name="DeathPlane" parent="." instance=ExtResource( 4 )]
+position = Vector2( 148.28, 193.109 )
+scale = Vector2( 22.3182, 0.629917 )
+
+[node name="Block" parent="." instance=ExtResource( 3 )]
+position = Vector2( 27.7819, 53.0915 )
+player_path = NodePath("../Player")
+
+[node name="Gem" parent="." instance=ExtResource( 2 )]
+position = Vector2( 34.5258, 59.8756 )

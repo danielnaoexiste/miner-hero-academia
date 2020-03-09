@@ -1,0 +1,42 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://TileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://Gem.tscn" type="PackedScene" id=2]
+[ext_resource path="res://DestructibleBlock.tscn" type="PackedScene" id=3]
+[ext_resource path="res://DeathPlane.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Bunny.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Cursors.tscn" type="PackedScene" id=7]
+[ext_resource path="res://PauseLayer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://World.gd" type="Script" id=9]
+
+[node name="World4" type="Node2D"]
+script = ExtResource( 9 )
+
+[node name="Gem" parent="." instance=ExtResource( 2 )]
+position = Vector2( 228.282, 139.314 )
+
+[node name="Block" parent="." instance=ExtResource( 3 )]
+position = Vector2( 219.316, 131.038 )
+player_path = NodePath("../Player")
+
+[node name="DeathPlane" parent="." instance=ExtResource( 4 )]
+position = Vector2( 156.556, 193.798 )
+scale = Vector2( 17.72, 1 )
+
+[node name="Bunny" parent="." instance=ExtResource( 5 )]
+position = Vector2( 160.694, 18.6212 )
+next_scene = "res://World5.tscn"
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 65543, 0, 0, 65544, 0, 1, 65545, 0, 1, 65546, 0, 1, 65547, 0, 1, 65548, 0, 2, 131079, 0, 131072, 131080, 0, 131073, 131081, 0, 131073, 131082, 0, 131073, 131083, 0, 131073, 131084, 0, 131074, 589838, 0, 0, 589839, 0, 2, 655374, 0, 131072, 655375, 0, 131074 )
+
+[node name="Player" parent="." instance=ExtResource( 6 )]
+position = Vector2( 248.283, 141.383 )
+
+[node name="Cursors" parent="." instance=ExtResource( 7 )]
+
+[node name="PauseLayer" parent="." instance=ExtResource( 8 )]

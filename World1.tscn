@@ -1,0 +1,42 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://TileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://DeathPlane.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Bunny.tscn" type="PackedScene" id=3]
+[ext_resource path="res://PauseLayer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Gem.tscn" type="PackedScene" id=5]
+[ext_resource path="res://DestructibleBlock.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://World.gd" type="Script" id=8]
+[ext_resource path="res://Cursors.tscn" type="PackedScene" id=9]
+
+[node name="World1" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="DeathPlane" parent="." instance=ExtResource( 2 )]
+position = Vector2( 156.704, 197.772 )
+scale = Vector2( 18.44, 1 )
+
+[node name="Bunny" parent="." instance=ExtResource( 3 )]
+position = Vector2( 277.789, 114.06 )
+next_scene = "res://World2.tscn"
+
+[node name="PauseLayer" parent="." instance=ExtResource( 4 )]
+
+[node name="Gem" parent="." instance=ExtResource( 5 )]
+position = Vector2( 161.189, 107.416 )
+
+[node name="Block" parent="." instance=ExtResource( 6 )]
+position = Vector2( 152.871, 97.6285 )
+player_path = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource( 7 )]
+position = Vector2( 58.0571, 110.5 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -65528, 0, 65537, -65527, 0, 65537, 8, 0, 65537, 10, 0, 65537, 11, 0, 65537, 65544, 0, 0, 65545, 0, 0, 65546, 0, 2, 65547, 0, 2, 131080, 0, 65536, 131081, 0, 65537, 131083, 0, 65538, 196616, 0, 65536, 196617, 0, 65537, 196618, 0, 65537, 196619, 0, 65538, 262152, 0, 65536, 262153, 0, 65537, 262154, 0, 65537, 262155, 0, 65538, 327688, 0, 131072, 327689, 0, 131073, 327690, 0, 131073, 327691, 0, 131074, 458754, 0, 0, 458755, 0, 1, 458756, 0, 1, 458757, 0, 1, 458758, 0, 1, 458759, 0, 1, 458760, 0, 1, 458761, 0, 1, 458762, 0, 1, 458763, 0, 1, 458764, 0, 1, 458765, 0, 1, 458766, 0, 1, 458767, 0, 1, 458768, 0, 1, 458769, 0, 1, 458770, 0, 2, 524290, 0, 65536, 524291, 0, 65537, 524292, 0, 65537, 524293, 0, 65537, 524294, 0, 65537, 524295, 0, 65537, 524296, 0, 65537, 524297, 0, 65537, 524298, 0, 65537, 524299, 0, 65537, 524300, 0, 65537, 524301, 0, 65537, 524302, 0, 65537, 524303, 0, 65537, 524304, 0, 65537, 524305, 0, 65537, 524306, 0, 65538, 589826, 0, 65536, 589827, 0, 65537, 589828, 0, 65537, 589829, 0, 65537, 589830, 0, 65537, 589831, 0, 65537, 589832, 0, 65537, 589833, 0, 65537, 589834, 0, 65537, 589835, 0, 65537, 589836, 0, 65537, 589837, 0, 65537, 589838, 0, 65537, 589839, 0, 65537, 589840, 0, 65537, 589841, 0, 65537, 589842, 0, 65538, 655362, 0, 65536, 655363, 0, 65537, 655364, 0, 65537, 655365, 0, 65537, 655366, 0, 65537, 655367, 0, 65537, 655368, 0, 65537, 655369, 0, 65537, 655370, 0, 65537, 655371, 0, 65537, 655372, 0, 65537, 655373, 0, 65537, 655374, 0, 65537, 655375, 0, 65537, 655376, 0, 65537, 655377, 0, 65537, 655378, 0, 65538, 720898, 0, 65536, 720914, 0, 65538 )
+
+[node name="Cursors" parent="." instance=ExtResource( 9 )]

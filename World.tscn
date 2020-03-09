@@ -1,12 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World.gd" type="Script" id=2]
 [ext_resource path="res://TileSet.tres" type="TileSet" id=3]
 [ext_resource path="res://PauseLayer.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Art/cursor.png" type="Texture" id=5]
+[ext_resource path="res://Cursors.tscn" type="PackedScene" id=5]
 [ext_resource path="res://DestructibleBlock.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Art/Pica.png" type="Texture" id=7]
 [ext_resource path="res://DeathPlane.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Bunny.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Gem.tscn" type="PackedScene" id=10]
@@ -19,16 +18,7 @@ position = Vector2( 22.5309, 14.7703 )
 
 [node name="PauseLayer" parent="." instance=ExtResource( 4 )]
 
-[node name="Cursors" type="Node" parent="."]
-
-[node name="Cursor" type="Sprite" parent="Cursors"]
-visible = false
-texture = ExtResource( 5 )
-centered = false
-
-[node name="MineCursor" type="Sprite" parent="Cursors"]
-visible = false
-texture = ExtResource( 7 )
+[node name="Cursors" parent="." instance=ExtResource( 5 )]
 
 [node name="DeathPlane" parent="." instance=ExtResource( 8 )]
 position = Vector2( 173.845, 189.752 )
